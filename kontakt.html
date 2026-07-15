@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light only">
+  <meta name="description" content="Kontakt – Adresse, Anfahrt und Kontaktformular.">
+  <title>Kontakt | Barmer Integrations- und Bildungsverein e.V.</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="layout-sidebar">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <a href="index.html"><img src="assets/images/logo.png" alt="BIB e.V. Logo"></a>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="index.html" class="sidebar-link">Start</a>
+        <a href="ueber-uns.html" class="sidebar-link">Über uns</a>
+        <a href="dienste.html" class="sidebar-link">Unsere Dienste</a>
+        <a href="jugend-bildung.html" class="sidebar-link">Jugend & Bildung</a>
+        <a href="aktuelles.html" class="sidebar-link">Aktuelles</a>
+        <a href="kontakt.html" class="sidebar-link active">Kontakt</a>
+      </nav>
+      <div class="sidebar-footer">
+        <p><strong>BIB e.V.</strong><br>Höhne 102<br>42275 Wuppertal</p>
+        <p style="margin-top:8px;">info@bibev.de</p>
+      </div>
+    </aside>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle" aria-label="Menü öffnen">
+      <span></span>
+    </button>
+
+    <!-- Overlay for mobile -->
+    <div class="overlay"></div>
+
+    <!-- Main Content -->
+    <main class="main">
+      <section class="hero">
+        <div class="hero-bg" style="background-image: url('assets/images/IMG_8352-1-1024x768.jpeg');"></div>
+        <div class="hero-inner">
+          <div class="hero-overline">Kontakt</div>
+          <h1 class="hero-title">Sagen Sie Hallo.</h1>
+          <p class="hero-lead">Wir freuen uns auf Ihren Besuch oder Ihre Nachricht.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <div class="eyebrow">Adresse</div>
+          <h2>So erreichen Sie uns</h2>
+        </div>
+        <div class="contact-wrap">
+          <div class="contact-form">
+            <form id="contactForm">
+              <div class="field">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Ihr Name" required>
+              </div>
+              <div class="field">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" placeholder="ihre@email.de" required>
+              </div>
+              <div class="field">
+                <label for="subject">Betreff</label>
+                <input type="text" id="subject" name="subject" placeholder="Betreff" required>
+              </div>
+              <div class="field">
+                <label for="message">Nachricht</label>
+                <textarea id="message" name="message" placeholder="Wie können wir Ihnen helfen?" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-clay">Nachricht senden</button>
+              <div id="formStatus" class="form-status" style="margin-top:14px;"></div>
+            </form>
+          </div>
+          <div>
+            <div class="map-frame">
+              <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=7.1490%2C51.2670%2C7.1530%2C51.2700&layer=mapnik&marker=51.2690%2C7.1510" title="Karte" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="data-row" style="margin-top: 24px;">
+              <div class="data-row-item">
+                <span class="data-row-label">Adresse</span>
+                <span class="data-row-value">Höhne 102<br>42275 Wuppertal</span>
+              </div>
+              <div class="data-row-item">
+                <span class="data-row-label">E-Mail</span>
+                <span class="data-row-value"><a href="mailto:info@bibev.de" style="color: var(--forest);">info@bibev.de</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
