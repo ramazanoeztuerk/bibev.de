@@ -810,6 +810,219 @@ ul,ol { list-style: none; }
   }
 }
 
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TRANSIT — ÖPNV-Anreisekarten
+   ═══════════════════════════════════════════════════════════════════════════ */
+.transit-intro {
+  max-width: 720px;
+  margin-bottom: 48px;
+  font-size: 1.05rem;
+  line-height: 1.78;
+  color: var(--ink-muted);
+}
+
+.transit-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.transit-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-card);
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.transit-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  transition: height var(--transition);
+}
+
+.transit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(196, 113, 78, .18);
+}
+
+.transit-card:hover::before { height: 6px; }
+
+.transit-card.schwebebahn::before { background: linear-gradient(90deg, #003399, #0066cc); }
+.transit-card.bus::before { background: linear-gradient(90deg, #e63946, #f4a261); }
+.transit-card.bahn::before { background: linear-gradient(90deg, #2d6a4f, #40916c); }
+
+.transit-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.transit-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.transit-icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.transit-card.schwebebahn .transit-icon {
+  background: linear-gradient(135deg, #e8f0fe, #d4e4fc);
+  color: #003399;
+}
+
+.transit-card.bus .transit-icon {
+  background: linear-gradient(135deg, #fde8e8, #fcd5ce);
+  color: #c1121f;
+}
+
+.transit-card.bahn .transit-icon {
+  background: linear-gradient(135deg, #eaf5ef, #d4ede0);
+  color: #1b4332;
+}
+
+.transit-card h3 {
+  font-size: 1.15rem;
+  color: var(--forest);
+  margin: 0;
+  font-family: 'Amiri', Georgia, serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.transit-station {
+  font-size: .88rem;
+  color: var(--ink-faint);
+  font-weight: 500;
+  letter-spacing: .02em;
+  margin-top: 2px;
+}
+
+.transit-lines {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.transit-line-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+.line-sb { background: #003399; }
+.line-ce { background: #e76f51; }
+.line-city { background: #6c757d; }
+.line-s8 { background: #2d6a4f; }
+.line-re { background: #c1121f; }
+.line-e { background: #e09f3e; }
+.line-ne { background: #1a1a2e; }
+
+.transit-walk {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--paper-dark);
+  border-radius: var(--radius-sm);
+  margin-top: auto;
+}
+
+.transit-walk-icon {
+  width: 20px;
+  height: 20px;
+  opacity: .6;
+  flex-shrink: 0;
+  color: var(--forest);
+}
+
+.transit-walk-text {
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--forest);
+  white-space: nowrap;
+}
+
+.transit-walk-dots {
+  flex: 1;
+  height: 1px;
+  border-top: 2px dashed var(--clay-light);
+  min-width: 20px;
+  margin: 0 4px;
+}
+
+.transit-walk-duration {
+  font-size: .82rem;
+  color: var(--ink-faint);
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.transit-desc {
+  font-size: .9rem;
+  line-height: 1.72;
+  color: var(--ink-muted);
+}
+
+.transit-vrr {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.transit-vrr-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--white);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  color: var(--forest);
+  font-weight: 600;
+  font-size: .93rem;
+  transition: all var(--transition);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+}
+
+.transit-vrr-link:hover {
+  border-color: var(--clay);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.transit-vrr-link svg {
+  width: 20px;
+  height: 20px;
+  opacity: .7;
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    ORNAMENT — Islamisches Trennelement
    ═══════════════════════════════════════════════════════════════════════════ */
@@ -1076,6 +1289,8 @@ ul,ol { list-style: none; }
 
   .contact-wrap { grid-template-columns: 1fr; gap: 36px; }
 
+  .transit-cards { grid-template-columns: 1fr; }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 44px;
@@ -1107,6 +1322,9 @@ ul,ol { list-style: none; }
 
   .contact-form { padding: 28px 20px; }
   .contact-wrap { gap: 28px; }
+
+  .transit-cards { gap: 18px; }
+  .transit-card { padding: 28px 22px; }
 
   .data-row { grid-template-columns: 1fr; padding: 24px 20px; gap: 0; }
 

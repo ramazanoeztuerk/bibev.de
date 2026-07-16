@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
-    document.querySelectorAll('.bento-tile, .gallery-card, .manifesto-item, .split, .data-row').forEach(function (el) {
+    document.querySelectorAll('.bento-tile, .gallery-card, .manifesto-item, .split, .data-row, .transit-card').forEach(function (el) {
       el.style.opacity = '0';
       el.style.transform = 'translateY(24px)';
       el.style.transition = 'opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1)';
