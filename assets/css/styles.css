@@ -1279,7 +1279,7 @@ ul,ol { list-style: none; }
   opacity: 0;
   visibility: hidden;
   transition: opacity .4s ease, visibility .4s ease;
-  z-index: 1050;
+  z-index: 990;
   cursor: pointer;
 }
 
@@ -1315,15 +1315,16 @@ ul,ol { list-style: none; }
   .sidebar-nav { flex-direction: column; overflow-x: visible; }
   .sidebar-footer { display: block; }
 
-  .menu-toggle { display: flex; }
-  .main { margin-left: 0; }
+  .menu-toggle { display: flex; top: 12px; }
+  .main { margin-left: 0; padding-top: 64px; }
+  .sidebar { padding-top: 76px; }
 
   .hero {
     height: auto;
     min-height: 480px;
   }
 
-  .hero-inner { padding: 96px 24px 56px; }
+  .hero-inner { padding: 52px 24px 56px; }
   .hero-bg::after { background: linear-gradient(180deg, rgba(15, 42, 31, .55) 0%, rgba(15, 42, 31, .45) 45%, rgba(15, 42, 31, .75) 100%); }
 
   .manifesto { grid-template-columns: 1fr 1fr; }
@@ -1376,7 +1377,7 @@ ul,ol { list-style: none; }
   .section-header { margin-bottom: 36px; }
 
   .hero { min-height: 400px; }
-  .hero-inner { padding: 88px 16px 44px; }
+  .hero-inner { padding: 36px 16px 44px; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; }
 
@@ -1456,6 +1457,25 @@ ul,ol { list-style: none; }
   .hero-bg { position: relative; height: 200px; }
   body { font-size: 12pt; }
 }
+/* ── Mobile Kopfleiste: Logo und Menü-Button, damit nichts über dem Inhalt schwebt ── */
+.mobile-bar {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 64px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 68px;
+  background: var(--paper-light);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+  z-index: 980;
+}
+.mobile-bar-logo img { height: 46px; width: auto; display: block; }
+@media (max-width: 899px) {
+  .mobile-bar { display: flex; }
+}
+
 /* ── Rechtstexte (Impressum, Datenschutz) ── */
 .legal-text { max-width: 760px; }
 .legal-text h3 {
