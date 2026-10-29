@@ -7,11 +7,23 @@
   <meta name="description" content="Impressum – Barmer Integrations- und Bildungsverein e.V.">
   <title>Impressum | Barmer Integrations- und Bildungsverein e.V.</title>
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://bibev.de/impressum.html">
+  <link rel="alternate" hreflang="de" href="https://bibev.de/impressum.html">
+  <link rel="alternate" hreflang="tr" href="https://bibev.de/tr/kunye.html">
+  <link rel="alternate" hreflang="x-default" href="https://bibev.de/impressum.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Barmer Integrations- und Bildungsverein e.V.">
+  <meta property="og:title" content="Impressum | Barmer Integrations- und Bildungsverein e.V.">
+  <meta property="og:description" content="Impressum – Barmer Integrations- und Bildungsverein e.V.">
+  <meta property="og:url" content="https://bibev.de/impressum.html">
+  <meta property="og:image" content="https://bibev.de/assets/images/logo.png">
+  <meta property="og:locale" content="de_DE">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <div class="layout-sidebar">
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <div class="sidebar-logo">
         <a href="index.html"><img src="assets/images/logo.png" alt="BIB e.V. Logo"></a>
       </div>
@@ -22,6 +34,7 @@
         <a href="jugend-bildung.html" class="sidebar-link">Jugend & Bildung</a>
         <a href="aktuelles.html" class="sidebar-link">Aktuelles</a>
         <a href="kontakt.html" class="sidebar-link">Kontakt</a>
+        <a href="spenden.html" class="sidebar-link">Spenden</a>
       </nav>
       <div class="sidebar-footer">
         <p><strong>BIB e.V.</strong><br>Höhne 102<br>42275 Wuppertal<br>info@bibev.de</p>
@@ -32,12 +45,12 @@
     </aside>
 
     <!-- Mobile Menu Toggle -->
-    <button class="menu-toggle" aria-label="Menü öffnen">
+    <button type="button" class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="sidebar">
       <span></span>
     </button>
 
     <!-- Overlay for mobile -->
-    <div class="overlay"></div>
+    <div class="overlay" aria-hidden="true"></div>
 
     <!-- Main Content -->
     <main class="main">
@@ -46,7 +59,7 @@
         <div class="hero-inner">
           <div class="hero-overline">Rechtliches</div>
           <h1 class="hero-title">Impressum</h1>
-          <p class="hero-lead">Angaben gemäß § 5 TMG</p>
+          <p class="hero-lead">Angaben gemäß § 5 DDG</p>
         </div>
       </section>
 
@@ -83,6 +96,29 @@
         </div>
       </section>
 
+      <section class="section section-alt">
+        <div class="section-header">
+          <div class="eyebrow">Rechtliches</div>
+          <h2>Weitere Angaben</h2>
+        </div>
+        <div class="legal-text">
+          <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
+          <p>Burak Ülker<br>Höhne 102<br>42275 Wuppertal</p>
+
+          <h3>Verbraucherstreitbeilegung</h3>
+          <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+          <h3>Haftung für Inhalte</h3>
+          <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine Haftung ist erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden entsprechender Rechtsverletzungen entfernen wir diese Inhalte umgehend.</p>
+
+          <h3>Haftung für Links</h3>
+          <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Bei Bekanntwerden von Rechtsverletzungen entfernen wir derartige Links umgehend.</p>
+
+          <h3>Urheberrecht</h3>
+          <p>Die durch den Verein erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des Vereins. Sollten Sie auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis.</p>
+        </div>
+      </section>
+
       <!-- Footer -->
       <footer class="footer">
         <div class="footer-grid">
@@ -99,6 +135,7 @@
               <li><a href="jugend-bildung.html">Jugend & Bildung</a></li>
               <li><a href="aktuelles.html">Aktuelles</a></li>
               <li><a href="kontakt.html">Kontakt</a></li>
+              <li><a href="spenden.html">Spenden</a></li>
             </ul>
           </div>
           <div>

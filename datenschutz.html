@@ -7,11 +7,23 @@
   <meta name="description" content="Datenschutzerklärung – Barmer Integrations- und Bildungsverein e.V.">
   <title>Datenschutz | Barmer Integrations- und Bildungsverein e.V.</title>
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://bibev.de/datenschutz.html">
+  <link rel="alternate" hreflang="de" href="https://bibev.de/datenschutz.html">
+  <link rel="alternate" hreflang="tr" href="https://bibev.de/tr/gizlilik.html">
+  <link rel="alternate" hreflang="x-default" href="https://bibev.de/datenschutz.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Barmer Integrations- und Bildungsverein e.V.">
+  <meta property="og:title" content="Datenschutz | Barmer Integrations- und Bildungsverein e.V.">
+  <meta property="og:description" content="Datenschutzerklärung – Barmer Integrations- und Bildungsverein e.V.">
+  <meta property="og:url" content="https://bibev.de/datenschutz.html">
+  <meta property="og:image" content="https://bibev.de/assets/images/logo.png">
+  <meta property="og:locale" content="de_DE">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <div class="layout-sidebar">
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <div class="sidebar-logo">
         <a href="index.html"><img src="assets/images/logo.png" alt="BIB e.V. Logo"></a>
       </div>
@@ -22,6 +34,7 @@
         <a href="jugend-bildung.html" class="sidebar-link">Jugend & Bildung</a>
         <a href="aktuelles.html" class="sidebar-link">Aktuelles</a>
         <a href="kontakt.html" class="sidebar-link">Kontakt</a>
+        <a href="spenden.html" class="sidebar-link">Spenden</a>
       </nav>
       <div class="sidebar-footer">
         <p><strong>BIB e.V.</strong><br>Höhne 102<br>42275 Wuppertal<br>info@bibev.de</p>
@@ -32,12 +45,12 @@
     </aside>
 
     <!-- Mobile Menu Toggle -->
-    <button class="menu-toggle" aria-label="Menü öffnen">
+    <button type="button" class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="sidebar">
       <span></span>
     </button>
 
     <!-- Overlay for mobile -->
-    <div class="overlay"></div>
+    <div class="overlay" aria-hidden="true"></div>
 
     <!-- Main Content -->
     <main class="main">
@@ -69,11 +82,31 @@
             <span class="data-row-value"><a href="mailto:info@bibev.de" style="color:var(--forest);">info@bibev.de</a></span>
           </div>
         </div>
-        <div style="margin-top: 24px;">
-          <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften.</p>
-          <p>Beim Besuch unserer Website speichert unser Hosting-Provider automatisch Informationen in Server-Log-Dateien: IP-Adresse, Datum und Uhrzeit der Anfrage, Browsertyp, Betriebssystem und Referrer URL.</p>
-          <p>Wenn Sie uns über das Kontaktformular kontaktieren, werden Ihre Angaben (Name, E-Mail, Betreff, Nachricht) zum Zweck der Bearbeitung Ihrer Anfrage bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
-          <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer personenbezogenen Daten.</p>
+        <div class="legal-text" style="margin-top: 32px;">
+          <h3>Allgemeines</h3>
+          <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung. Wir verwenden keine Cookies, keine Analyse- und keine Tracking-Dienste.</p>
+
+          <h3>Hosting bei GitHub Pages</h3>
+          <p>Diese Website wird bei GitHub Pages gehostet. Anbieter ist die GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf der Website verarbeitet GitHub technisch notwendige Daten, insbesondere Ihre IP-Adresse, um die Seiten auszuliefern und die Sicherheit des Dienstes zu gewährleisten. Die Datenübermittlung in die USA stützt sich auf das EU-US Data Privacy Framework, nach dem GitHub zertifiziert ist. Rechtsgrundlage ist unser berechtigtes Interesse an einer sicheren und zuverlässigen Bereitstellung der Website nach Art. 6 Abs. 1 lit. f DSGVO. Weitere Informationen finden Sie in der <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Datenschutzerklärung von GitHub</a>.</p>
+
+          <h3>Server-Log-Dateien</h3>
+          <p>Der Hoster erhebt und speichert automatisch Informationen in Server-Log-Dateien, die Ihr Browser übermittelt: IP-Adresse, Datum und Uhrzeit der Anfrage, Browsertyp und -version, Betriebssystem und Referrer-URL. Eine Zusammenführung mit anderen Datenquellen findet nicht statt. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO.</p>
+
+          <h3>Schriftarten</h3>
+          <p>Die verwendeten Schriftarten sind lokal auf unserem Server eingebunden. Beim Aufruf der Seiten wird keine Verbindung zu Google oder anderen Schriftanbietern hergestellt.</p>
+
+          <h3>Kontaktformular und Anfragen per E-Mail</h3>
+          <p>Unser Kontaktformular speichert keine Daten auf dieser Website. Beim Absenden öffnet sich Ihr eigenes E-Mail-Programm mit den eingegebenen Angaben, und die Nachricht wird erst verschickt, wenn Sie sie dort selbst absenden.</p>
+          <p>Wenn Sie uns per E-Mail oder über das Kontaktformular schreiben, speichern wir Ihre Angaben (Name, E-Mail-Adresse, Betreff, Nachricht) zur Bearbeitung Ihrer Anfrage und für Anschlussfragen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO, bei vertragsbezogenen Anfragen Art. 6 Abs. 1 lit. b DSGVO. Wir geben diese Daten nicht ohne Ihre Einwilligung weiter und löschen sie, sobald der Zweck entfällt, sofern keine gesetzlichen Aufbewahrungsfristen entgegenstehen.</p>
+
+          <h3>Karte von OpenStreetMap</h3>
+          <p>Auf unserer Kontaktseite können Sie eine Karte von OpenStreetMap anzeigen lassen. Anbieter ist die OpenStreetMap Foundation, St John’s Innovation Centre, Cowley Road, Cambridge, CB4 0WS, Vereinigtes Königreich. Die Karte wird erst geladen, wenn Sie auf „Karte laden“ klicken. Erst dann wird Ihre IP-Adresse an OpenStreetMap übertragen. Für das Vereinigte Königreich besteht ein Angemessenheitsbeschluss der EU-Kommission. Rechtsgrundlage ist Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO, die Sie durch den Klick erteilen und durch Neuladen der Seite jederzeit widerrufen können. Weitere Informationen finden Sie in der <a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">Datenschutzerklärung der OpenStreetMap Foundation</a>.</p>
+
+          <h3>Ihre Rechte</h3>
+          <p>Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten sowie das Recht auf Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch gegen die Verarbeitung. Eine erteilte Einwilligung können Sie jederzeit für die Zukunft widerrufen. Wenden Sie sich dafür einfach an die oben genannte Adresse.</p>
+
+          <h3>Beschwerderecht bei der Aufsichtsbehörde</h3>
+          <p>Im Falle von Verstößen gegen die DSGVO steht Ihnen ein Beschwerderecht bei einer Aufsichtsbehörde zu. Für uns zuständig ist die Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen, Kavalleriestraße 2 bis 4, 40213 Düsseldorf, <a href="https://www.ldi.nrw.de" target="_blank" rel="noopener">www.ldi.nrw.de</a>.</p>
         </div>
       </section>
 
@@ -93,6 +126,7 @@
               <li><a href="jugend-bildung.html">Jugend & Bildung</a></li>
               <li><a href="aktuelles.html">Aktuelles</a></li>
               <li><a href="kontakt.html">Kontakt</a></li>
+              <li><a href="spenden.html">Spenden</a></li>
             </ul>
           </div>
           <div>

@@ -7,11 +7,23 @@
   <meta name="description" content="Gizlilik Politikası – Barmer Entegrasyon ve Eğitim Derneği.">
   <title>Gizlilik Politikası | Barmer Entegrasyon ve Eğitim Derneği</title>
   <link rel="icon" type="image/png" href="../assets/images/favicon.png">
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="https://bibev.de/tr/gizlilik.html">
+  <link rel="alternate" hreflang="de" href="https://bibev.de/datenschutz.html">
+  <link rel="alternate" hreflang="tr" href="https://bibev.de/tr/gizlilik.html">
+  <link rel="alternate" hreflang="x-default" href="https://bibev.de/datenschutz.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Barmer Entegrasyon ve Eğitim Derneği">
+  <meta property="og:title" content="Gizlilik Politikası | Barmer Entegrasyon ve Eğitim Derneği">
+  <meta property="og:description" content="Gizlilik Politikası – Barmer Entegrasyon ve Eğitim Derneği.">
+  <meta property="og:url" content="https://bibev.de/tr/gizlilik.html">
+  <meta property="og:image" content="https://bibev.de/assets/images/logo.png">
+  <meta property="og:locale" content="tr_TR">
   <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
   <div class="layout-sidebar">
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <div class="sidebar-logo">
         <a href="index.html"><img src="../assets/images/logo.png" alt="BİB e.V. Logosu"></a>
       </div>
@@ -33,12 +45,12 @@
     </aside>
 
     <!-- Mobile Menu Toggle -->
-    <button class="menu-toggle" aria-label="Menüyü aç">
+    <button type="button" class="menu-toggle" aria-label="Menüyü aç" aria-expanded="false" aria-controls="sidebar">
       <span></span>
     </button>
 
     <!-- Overlay for mobile -->
-    <div class="overlay"></div>
+    <div class="overlay" aria-hidden="true"></div>
 
     <!-- Main Content -->
     <main class="main">
@@ -70,11 +82,33 @@
             <span class="data-row-value"><a href="mailto:info@bibev.de" style="color:var(--forest);">info@bibev.de</a></span>
           </div>
         </div>
-        <div style="margin-top: 24px;">
-          <p>Bu sayfaların işletmecileri kişisel verilerinizin korunmasını çok ciddiye almaktadır. Kişisel verilerinizi gizli ve yasal veri koruma düzenlemelerine uygun olarak işliyoruz.</p>
-          <p>Web sitemizi ziyaret ettiğinizde, barındırma sağlayıcımız sunucu günlük dosyalarında otomatik olarak bilgiler saklar: IP adresi, talebin tarihi ve saati, tarayıcı türü, işletim sistemi ve yönlendiren URL.</p>
-          <p>İletişim formu aracılığıyla bizimle iletişime geçtiğinizde, bilgileriniz (ad, e-posta, konu, mesaj) talebinizin işlenmesi amacıyla tarafımızca saklanır. Bu verileri izniniz olmadan üçüncü taraflara aktarmayız.</p>
-          <p>Kişisel verilerinizin işlenmesiyle ilgili olarak bilgi edinme, düzeltme, silme ve kısıtlama hakkına sahipsiniz.</p>
+        <div class="legal-text" style="margin-top: 32px;">
+          <p class="legal-note">Bu sayfa, Almanca <a href="../datenschutz.html">Datenschutzerklärung</a> sayfasının Türkçe çevirisidir. Hukuken yalnızca Almanca sürüm bağlayıcıdır.</p>
+
+          <h3>Genel</h3>
+          <p>Bu sayfaların işletmecileri kişisel verilerinizin korunmasını çok ciddiye almaktadır. Kişisel verilerinizi gizli olarak, yasal veri koruma düzenlemelerine ve bu gizlilik politikasına uygun şekilde işliyoruz. Çerez, analiz veya takip hizmeti kullanmıyoruz.</p>
+
+          <h3>GitHub Pages üzerinde barındırma</h3>
+          <p>Bu web sitesi GitHub Pages üzerinde barındırılmaktadır. Sağlayıcı GitHub Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, ABD'dir. Site açıldığında GitHub, sayfaları sunmak ve hizmetin güvenliğini sağlamak için teknik olarak gerekli verileri, özellikle IP adresinizi işler. ABD'ye veri aktarımı, GitHub'ın sertifikalı olduğu AB-ABD Veri Gizliliği Çerçevesi'ne dayanır. Hukuki dayanak, sitenin güvenli ve güvenilir sunulmasındaki meşru menfaatimizdir: GDPR Madde 6 Fıkra 1 bent f. Ayrıntılar için <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Gizlilik Bildirimi</a>'ne bakabilirsiniz.</p>
+
+          <h3>Sunucu kayıt dosyaları</h3>
+          <p>Barındırma sağlayıcısı, tarayıcınızın ilettiği bilgileri sunucu kayıt dosyalarında otomatik olarak saklar: IP adresi, talebin tarihi ve saati, tarayıcı türü ve sürümü, işletim sistemi ve yönlendiren URL. Bu veriler başka veri kaynaklarıyla birleştirilmez. Hukuki dayanak GDPR Madde 6 Fıkra 1 bent f'dir.</p>
+
+          <h3>Yazı tipleri</h3>
+          <p>Kullanılan yazı tipleri yerel olarak sunucumuzda bulunmaktadır. Sayfalar açıldığında Google'a veya başka yazı tipi sağlayıcılarına bağlantı kurulmaz.</p>
+
+          <h3>İletişim formu ve e-posta ile talepler</h3>
+          <p>İletişim formumuz bu web sitesinde veri saklamaz. Gönder'e tıkladığınızda girdiğiniz bilgilerle kendi e-posta programınız açılır ve mesaj ancak siz orada gönderdiğinizde iletilir.</p>
+          <p>Bize e-posta veya iletişim formu ile yazdığınızda, bilgilerinizi talebinizin işlenmesi ve olası takip soruları için saklarız. Hukuki dayanak GDPR Madde 6 Fıkra 1 bent f, sözleşmeyle ilgili taleplerde bent b'dir. Bu verileri izniniz olmadan üçüncü kişilere aktarmayız ve yasal saklama süreleri engel olmadığı sürece amaç ortadan kalktığında sileriz.</p>
+
+          <h3>OpenStreetMap haritası</h3>
+          <p>İletişim sayfamızda OpenStreetMap'ten bir harita görüntüleyebilirsiniz. Sağlayıcı OpenStreetMap Foundation, St John’s Innovation Centre, Cowley Road, Cambridge, CB4 0WS, Birleşik Krallık'tır. Harita ancak „Haritayı yükle“ düğmesine tıkladığınızda yüklenir ve ancak o zaman IP adresiniz OpenStreetMap'e iletilir. Birleşik Krallık için AB Komisyonu'nun yeterlilik kararı bulunmaktadır. Hukuki dayanak, tıklamanızla verdiğiniz onaydır: GDPR Madde 6 Fıkra 1 bent a. Sayfayı yeniden yükleyerek onayınızı istediğiniz zaman geri alabilirsiniz. Ayrıntılar için <a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">OpenStreetMap Foundation Gizlilik Politikası</a>'na bakın.</p>
+
+          <h3>Haklarınız</h3>
+          <p>Saklanan kişisel verilerinizin kökeni, alıcıları ve işlenme amacı hakkında her zaman ücretsiz bilgi alma, ayrıca düzeltme, silme, işlemenin kısıtlanması, veri taşınabilirliği ve itiraz haklarına sahipsiniz. Verdiğiniz bir onayı istediğiniz zaman geleceğe yönelik olarak geri alabilirsiniz. Bunun için yukarıdaki adresten bize ulaşmanız yeterlidir.</p>
+
+          <h3>Denetim makamına şikayet hakkı</h3>
+          <p>GDPR ihlalleri durumunda bir denetim makamına şikayette bulunma hakkınız vardır. Bizim için yetkili makam Kuzey Ren-Vestfalya Veri Koruma ve Bilgi Edinme Özgürlüğü Görevlisi'dir: Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen, Kavalleriestraße 2 bis 4, 40213 Düsseldorf, <a href="https://www.ldi.nrw.de" target="_blank" rel="noopener">www.ldi.nrw.de</a>.</p>
         </div>
       </section>
 

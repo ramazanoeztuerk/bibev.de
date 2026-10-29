@@ -7,11 +7,22 @@
   <meta name="description" content="Aktuelles – Neuigkeiten und Veranstaltungen des Barmer Integrations- und Bildungsvereins e.V.">
   <title>Aktuelles | Barmer Integrations- und Bildungsverein e.V.</title>
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="canonical" href="https://bibev.de/aktuelles.html">
+  <link rel="alternate" hreflang="de" href="https://bibev.de/aktuelles.html">
+  <link rel="alternate" hreflang="tr" href="https://bibev.de/tr/guncel.html">
+  <link rel="alternate" hreflang="x-default" href="https://bibev.de/aktuelles.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Barmer Integrations- und Bildungsverein e.V.">
+  <meta property="og:title" content="Aktuelles | Barmer Integrations- und Bildungsverein e.V.">
+  <meta property="og:description" content="Aktuelles – Neuigkeiten und Veranstaltungen des Barmer Integrations- und Bildungsvereins e.V.">
+  <meta property="og:url" content="https://bibev.de/aktuelles.html">
+  <meta property="og:image" content="https://bibev.de/assets/images/logo.png">
+  <meta property="og:locale" content="de_DE">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <div class="layout-sidebar">
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <div class="sidebar-logo">
         <a href="index.html"><img src="assets/images/logo.png" alt="BIB e.V. Logo"></a>
       </div>
@@ -22,6 +33,7 @@
         <a href="jugend-bildung.html" class="sidebar-link">Jugend & Bildung</a>
         <a href="aktuelles.html" class="sidebar-link active">Aktuelles</a>
         <a href="kontakt.html" class="sidebar-link">Kontakt</a>
+        <a href="spenden.html" class="sidebar-link">Spenden</a>
       </nav>
       <div class="sidebar-footer">
         <p><strong>BIB e.V.</strong><br>Höhne 102<br>42275 Wuppertal<br>info@bibev.de</p>
@@ -32,12 +44,12 @@
     </aside>
 
     <!-- Mobile Menu Toggle -->
-    <button class="menu-toggle" aria-label="Menü öffnen">
+    <button type="button" class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="sidebar">
       <span></span>
     </button>
 
     <!-- Overlay for mobile -->
-    <div class="overlay"></div>
+    <div class="overlay" aria-hidden="true"></div>
 
     <!-- Main Content -->
     <main class="main">
@@ -57,28 +69,21 @@
         </div>
         <div class="gallery-hscroll">
           <div class="gallery-card">
-            <img src="assets/images/img_3036-1024x768.jpg" alt="Herbstfest">
-            <div class="gallery-caption">
-              <h4>Herbstfest 2025</h4>
-              <p>28.–30. November · Führung durch die Bildungseinrichtung am 29. November um 16 Uhr.</p>
-            </div>
-          </div>
-          <div class="gallery-card">
-            <img src="assets/images/IMG_5825_Original-1024x768.jpg" alt="Tag der offenen Moschee">
+            <img loading="lazy" decoding="async" src="assets/images/IMG_5825_Original-1024x768.jpg" alt="Tag der offenen Moschee">
             <div class="gallery-caption">
               <h4>Tag der offenen Moschee</h4>
               <p>Jährlich am 3. Oktober · 12–19 Uhr · Einladung an alle Nachbarn.</p>
             </div>
           </div>
           <div class="gallery-card">
-            <img src="assets/images/img_0304-1024x768.jpg" alt="Gemeindeleben">
+            <img loading="lazy" decoding="async" src="assets/images/img_0304-1024x768.jpg" alt="Gemeindeleben">
             <div class="gallery-caption">
               <h4>Moscheeführungen für Schulen</h4>
               <p>Ein etwa einstündiger Einblick in Religion und Alltag – perfekt für Schulklassen.</p>
             </div>
           </div>
           <div class="gallery-card">
-            <img src="assets/images/IMG_1055-1024x768.jpeg" alt="Dialog">
+            <img loading="lazy" decoding="async" src="assets/images/IMG_1055-1024x768.jpeg" alt="Dialog">
             <div class="gallery-caption">
               <h4>Interreligiöser Dialog</h4>
               <p>Wir suchen die Begegnung und das Gespräch mit Menschen aller Glaubensrichtungen.</p>
@@ -127,6 +132,7 @@
               <li><a href="jugend-bildung.html">Jugend & Bildung</a></li>
               <li><a href="aktuelles.html">Aktuelles</a></li>
               <li><a href="kontakt.html">Kontakt</a></li>
+              <li><a href="spenden.html">Spenden</a></li>
             </ul>
           </div>
           <div>
