@@ -199,22 +199,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* ── Intersection Observer: Bento-Tiles animieren ── */
+  /* ── Einblenden beim Scrollen ──
+     Nur was beim Laden noch unterhalb des sichtbaren Bereichs liegt.
+     Geschwister in einem Raster erscheinen leicht gestaffelt. */
   if ('IntersectionObserver' in window && !reduceMotion) {
     var revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          revealObserver.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        el.classList.add('visible');
+        revealObserver.unobserve(el);
+        // Danach Klassen entfernen, damit Hover-Übergänge ungestört bleiben
+        setTimeout(function () {
+          el.classList.remove('reveal', 'visible');
+          el.style.removeProperty('--reveal-delay');
+        }, 1300);
       });
-    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.bento-tile, .gallery-card, .manifesto-item, .split, .data-row, .transit-card').forEach(function (el) {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(24px)';
-      el.style.transition = 'opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1)';
+      if (el.getBoundingClientRect().top < window.innerHeight * 0.92) return;
+      var index = Array.prototype.indexOf.call(el.parentElement.children, el);
+      el.style.setProperty('--reveal-delay', Math.min(index, 5) * 70 + 'ms');
+      el.classList.add('reveal');
       revealObserver.observe(el);
     });
   }
