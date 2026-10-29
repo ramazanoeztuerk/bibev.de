@@ -7,11 +7,22 @@
   <meta name="description" content="Kontakt – Adresse, Anfahrt und Kontaktformular.">
   <title>Kontakt | Barmer Integrations- und Bildungsverein e.V.</title>
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="canonical" href="https://bibev.de/kontakt.html">
+  <link rel="alternate" hreflang="de" href="https://bibev.de/kontakt.html">
+  <link rel="alternate" hreflang="tr" href="https://bibev.de/tr/iletisim.html">
+  <link rel="alternate" hreflang="x-default" href="https://bibev.de/kontakt.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Barmer Integrations- und Bildungsverein e.V.">
+  <meta property="og:title" content="Kontakt | Barmer Integrations- und Bildungsverein e.V.">
+  <meta property="og:description" content="Kontakt – Adresse, Anfahrt und Kontaktformular.">
+  <meta property="og:url" content="https://bibev.de/kontakt.html">
+  <meta property="og:image" content="https://bibev.de/assets/images/logo.png">
+  <meta property="og:locale" content="de_DE">
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <div class="layout-sidebar">
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <div class="sidebar-logo">
         <a href="index.html"><img src="assets/images/logo.png" alt="BIB e.V. Logo"></a>
       </div>
@@ -22,6 +33,7 @@
         <a href="jugend-bildung.html" class="sidebar-link">Jugend & Bildung</a>
         <a href="aktuelles.html" class="sidebar-link">Aktuelles</a>
         <a href="kontakt.html" class="sidebar-link active">Kontakt</a>
+        <a href="spenden.html" class="sidebar-link">Spenden</a>
       </nav>
       <div class="sidebar-footer">
         <p><strong>BIB e.V.</strong><br>Höhne 102<br>42275 Wuppertal<br>info@bibev.de</p>
@@ -32,12 +44,12 @@
     </aside>
 
     <!-- Mobile Menu Toggle -->
-    <button class="menu-toggle" aria-label="Menü öffnen">
+    <button type="button" class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="sidebar">
       <span></span>
     </button>
 
     <!-- Overlay for mobile -->
-    <div class="overlay"></div>
+    <div class="overlay" aria-hidden="true"></div>
 
     <!-- Main Content -->
     <main class="main">
@@ -57,7 +69,7 @@
         </div>
         <div class="contact-wrap">
           <div class="contact-form">
-            <form id="contactForm">
+            <form id="contactForm" data-recipient="info@bibev.de">
               <div class="field">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Ihr Name" required>
@@ -79,8 +91,11 @@
             </form>
           </div>
           <div>
-            <div class="map-frame">
-              <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=7.1490%2C51.2670%2C7.1530%2C51.2700&layer=mapnik&marker=51.2690%2C7.1510" title="Karte" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-frame map-consent" data-title="Karte des Standorts Höhne 102"
+              data-src="https://www.openstreetmap.org/export/embed.html?bbox=7.1490%2C51.2670%2C7.1530%2C51.2700&amp;layer=mapnik&amp;marker=51.2690%2C7.1510">
+              <p>Mit dem Laden der Karte wird eine Verbindung zu OpenStreetMap hergestellt und Ihre IP-Adresse übertragen. Mehr dazu in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+              <button type="button" class="btn btn-clay map-consent-btn">Karte laden</button>
+              <a href="https://www.openstreetmap.org/search?query=H%C3%B6hne%20102%2C%2042275%20Wuppertal" target="_blank" rel="noopener noreferrer">Karte bei OpenStreetMap öffnen</a>
             </div>
             <div class="data-row" style="margin-top: 24px;">
               <div class="data-row-item">
@@ -225,6 +240,7 @@
               <li><a href="jugend-bildung.html">Jugend & Bildung</a></li>
               <li><a href="aktuelles.html">Aktuelles</a></li>
               <li><a href="kontakt.html">Kontakt</a></li>
+              <li><a href="spenden.html">Spenden</a></li>
             </ul>
           </div>
           <div>

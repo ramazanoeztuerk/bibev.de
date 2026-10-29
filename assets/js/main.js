@@ -8,6 +8,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const main = document.querySelector('.main');
   const menuToggle = document.querySelector('.menu-toggle');
   const overlay = document.querySelector('.overlay');
+  const isTurkish = document.documentElement.lang === 'tr';
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const labels = isTurkish
+    ? { open: 'Menüyü aç', close: 'Menüyü kapat', top: 'Yukarı kaydır' }
+    : { open: 'Menü öffnen', close: 'Menü schließen', top: 'Nach oben scrollen' };
 
   /* ── Active Link Highlighting ── */
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
@@ -45,14 +50,20 @@ document.addEventListener('DOMContentLoaded', function () {
     if (sidebar) sidebar.classList.add('is-open');
     if (overlay) overlay.classList.add('is-visible');
     document.body.style.overflow = 'hidden';
-    if (menuToggle) menuToggle.setAttribute('aria-label', 'Menü schließen');
+    if (menuToggle) {
+      menuToggle.setAttribute('aria-label', labels.close);
+      menuToggle.setAttribute('aria-expanded', 'true');
+    }
   }
 
   function closeMenu() {
     if (sidebar) sidebar.classList.remove('is-open');
     if (overlay) overlay.classList.remove('is-visible');
     document.body.style.overflow = '';
-    if (menuToggle) menuToggle.setAttribute('aria-label', 'Menü öffnen');
+    if (menuToggle) {
+      menuToggle.setAttribute('aria-label', labels.open);
+      menuToggle.setAttribute('aria-expanded', 'false');
+    }
   }
 
   function toggleMenu() {
@@ -87,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var target = document.querySelector(targetId);
       if (target) {
         e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
         /* Schliesse mobiles Menü nach Klick auf Ankerlink */
         if (sidebar && sidebar.classList.contains('is-open')) {
           closeMenu();
@@ -99,7 +110,8 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ── Scroll-to-Top Button ── */
   var scrollBtn = document.createElement('button');
   scrollBtn.className = 'scroll-top';
-  scrollBtn.setAttribute('aria-label', 'Nach oben scrollen');
+  scrollBtn.type = 'button';
+  scrollBtn.setAttribute('aria-label', labels.top);
   scrollBtn.innerHTML = '&#8593;';
   document.body.appendChild(scrollBtn);
 
@@ -114,10 +126,10 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   scrollBtn.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
   });
 
-  /* Throttle Scroll-Event f端r Performance */
+  /* Throttle Scroll-Event für Performance */
   var ticking = false;
   window.addEventListener('scroll', function () {
     if (!ticking) {
@@ -129,36 +141,66 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }, { passive: true });
 
-  /* ── Contact Form Handler ── */
+  /* ── Kontaktformular ──
+     Kein Server vorhanden: Die Nachricht wird im E-Mail-Programm des Besuchers vorbereitet */
   var contactForm = document.getElementById('contactForm');
   if (contactForm) {
+    var recipient = contactForm.dataset.recipient || 'info@bibev.de';
+    var texts = isTurkish ? {
+      missing: 'Lütfen tüm zorunlu alanları doldurun.',
+      opened: 'E-posta programınız açılıyor. Mesajı göndermek için orada "Gönder"e tıklayın. Program açılmazsa bize doğrudan ' + recipient + ' adresine yazabilirsiniz.',
+      from: 'Gönderen'
+    } : {
+      missing: 'Bitte füllen Sie alle erforderlichen Felder aus.',
+      opened: 'Ihr E-Mail-Programm wird geöffnet. Bitte senden Sie die vorbereitete Nachricht dort ab. Falls sich kein Programm öffnet, schreiben Sie uns direkt an ' + recipient + '.',
+      from: 'Absender'
+    };
+
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       var status = document.getElementById('formStatus');
-      var btn = contactForm.querySelector('button[type="submit"]');
-      var originalText = btn ? btn.textContent : 'Nachricht senden';
+      var value = function (id) {
+        var el = document.getElementById(id);
+        return el ? el.value.trim() : '';
+      };
+      var name = value('name');
+      var email = value('email');
+      var subject = value('subject');
+      var message = value('message');
 
-      if (btn) {
-        btn.textContent = 'Wird gesendet…';
-        btn.disabled = true;
+      if (!name || !email || !subject || !message) {
+        if (status) {
+          status.className = 'form-status error';
+          status.textContent = texts.missing;
+        }
+        return;
       }
 
-      setTimeout(function () {
-        if (status) {
-          status.className = 'form-status success';
-          status.textContent = 'Vielen Dank! Wir werden uns zeitnah bei Ihnen melden.';
-        }
-        if (btn) {
-          btn.textContent = originalText;
-          btn.disabled = false;
-        }
-        contactForm.reset();
-      }, 1500);
+      var body = message + '\n\n' + texts.from + ': ' + name + ' <' + email + '>';
+      window.location.href = 'mailto:' + recipient + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      if (status) {
+        status.className = 'form-status success';
+        status.textContent = texts.opened;
+      }
     });
   }
 
+  /* ── Karte erst nach Klick laden (Datenschutz) ── */
+  document.querySelectorAll('.map-consent-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var container = btn.closest('.map-frame');
+      var iframe = document.createElement('iframe');
+      iframe.title = container.dataset.title;
+      iframe.src = container.dataset.src;
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      container.classList.remove('map-consent');
+      container.replaceChildren(iframe);
+    });
+  });
+
   /* ── Intersection Observer: Bento-Tiles animieren ── */
-  if ('IntersectionObserver' in window) {
+  if ('IntersectionObserver' in window && !reduceMotion) {
     var revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
