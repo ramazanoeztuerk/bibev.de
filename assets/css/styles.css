@@ -322,11 +322,11 @@ ul,ol { list-style: none; }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(135deg,
-      rgba(8, 56, 67, .72) 0%,
-      rgba(8, 56, 67, .35) 40%,
-      rgba(8, 56, 67, .15) 70%,
-      rgba(8, 56, 67, .55) 100%);
+    /* Neutral abdunkeln, ohne Farbstich; nur dort, wo Text steht */
+    linear-gradient(90deg,
+      rgba(0, 0, 0, .55) 0%,
+      rgba(0, 0, 0, .25) 50%,
+      rgba(0, 0, 0, 0) 80%);
 }
 
 .hero-inner {
@@ -1279,7 +1279,7 @@ ul,ol { list-style: none; }
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(8, 56, 67, .5);
+  background: rgba(0, 0, 0, .4);
   backdrop-filter: blur(4px);
   opacity: 0;
   visibility: hidden;
@@ -1330,7 +1330,7 @@ ul,ol { list-style: none; }
   }
 
   .hero-inner { padding: 52px 28px 56px; }
-  .hero-bg::after { background: linear-gradient(180deg, rgba(8, 56, 67, .55) 0%, rgba(8, 56, 67, .45) 45%, rgba(8, 56, 67, .75) 100%); }
+  .hero-bg::after { background: linear-gradient(180deg, rgba(0, 0, 0, .15) 0%, rgba(0, 0, 0, .35) 45%, rgba(0, 0, 0, .65) 100%); }
 
   .manifesto { grid-template-columns: 1fr 1fr; }
 
